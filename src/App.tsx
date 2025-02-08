@@ -5,8 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import toast, { Toaster } from 'react-hot-toast';
 
-
 function App() {
+
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
@@ -482,7 +483,7 @@ function App() {
                   <motion.a
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    href="https://pratiksindhiya.onrender.com/resume.pdf"
+                    href={`${BASE_URL}/resume.pdf`}
                     download
                     className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium"
                   >
