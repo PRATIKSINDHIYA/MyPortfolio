@@ -314,7 +314,7 @@ function App() {
     "title": "Weather Forecasting",
     "description": "A weather forecasting application that provides real-time weather updates and future predictions",
     "image": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=2084",
-    "link": "https://github.com/PRATIKSINDHIYA/All_FrontendProject/tree/main/Weather_Forecasting"
+    "link": "https://github.com/PRATIKSINDHIYA/WeatherForecastingUsingReactjs"
   }
 ]
 .map((project, index) => (
