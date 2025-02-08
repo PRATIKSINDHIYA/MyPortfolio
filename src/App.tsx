@@ -35,34 +35,34 @@ function App() {
     setIsMenuOpen(false);
   };
 
-  const sendEmail = async (e) => {
-    e.preventDefault();
+ const sendEmail = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    if (!formRef.current) return;
+  if (!formRef.current) return;
 
-    const formData = new FormData(formRef.current);
-    const data = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        message: formData.get('message'),
-    };
+  const formData = new FormData(formRef.current);
+  const data = {
+    name: formData.get('name'),
+    email: formData.get('email'),
+    message: formData.get('message'),
+  };
 
-    try {
-        const response = await fetch('https://pratiksindhiya.vercel.app/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
+  try {
+    const response = await fetch('http://localhost:3000/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
 
-        if (!response.ok) throw new Error('Failed to send message');
-        
-        toast.success('Message sent successfully!');
-        formRef.current.reset();
-    } catch (error) {
-        toast.error('Failed to send message. Please try again.');
-    }
+    if (!response.ok) throw new Error('Failed to send message');
+    
+    toast.success('Message sent successfully!');
+    formRef.current.reset();
+  } catch (error) {
+    toast.error('Failed to send message. Please try again.');
+  }
 };
 
   return (
