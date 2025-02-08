@@ -467,7 +467,7 @@ function App() {
                     <div>
                       <h4 className="text-white">B.Tech in Computer Science</h4>
                       <p className="text-gray-400">Indian Institute of Information Technology Vadodara, Gujarat</p>
-                      <p className="text-gray-400">2020 - Present</p>
+                      <p className="text-gray-400">2022 - 2026</p>
                     </div>
                     <div>
                       <h4 className="text-white">Senior Secondary Education</h4>
