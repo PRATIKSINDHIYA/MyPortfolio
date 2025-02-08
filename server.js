@@ -1,7 +1,8 @@
-import express from 'express';
-import cors from 'cors';
-import nodemailer from 'nodemailer';
-import bodyParser from 'body-parser';
+const express = require('express');
+const path = require('path');
+const cors = require('cors');
+const nodemailer = require('nodemailer');
+const bodyParser = require('body-parser');
 
 const app = express();
 
@@ -9,8 +10,11 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-app.get('https://pratiksindhiya.vercel.app/', (req, res) => {
-    res.send("Welcome to the server");
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
 });
 
 app.post('/submit', (req, res) => {
@@ -19,8 +23,8 @@ app.post('/submit', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'pratiksindhiya3@gmail.com',
-            pass: 'fofp jzpe zvfz ntdi'
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS
         }
     });
 
@@ -40,6 +44,7 @@ app.post('/submit', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('Server is running on http://localhost:3000');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
 });

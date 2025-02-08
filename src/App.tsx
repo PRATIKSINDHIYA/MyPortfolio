@@ -35,35 +35,35 @@ function App() {
     setIsMenuOpen(false);
   };
 
-  const sendEmail = async (e: React.FormEvent) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
-  
+
     if (!formRef.current) return;
-  
+
     const formData = new FormData(formRef.current);
     const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      message: formData.get('message'),
+        name: formData.get('name'),
+        email: formData.get('email'),
+        message: formData.get('message'),
     };
-  
+
     try {
-      const response = await fetch('https://pratiksindhiya.vercel.app/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-  
-      if (!response.ok) throw new Error('Failed to send message');
-      
-      toast.success('Message sent successfully!');
-      formRef.current.reset();
+        const response = await fetch('https://pratiksindhiya.vercel.app/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+
+        if (!response.ok) throw new Error('Failed to send message');
+        
+        toast.success('Message sent successfully!');
+        formRef.current.reset();
     } catch (error) {
-      toast.error('Failed to send message. Please try again.');
+        toast.error('Failed to send message. Please try again.');
     }
-  };
+};
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
