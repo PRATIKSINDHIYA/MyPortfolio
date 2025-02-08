@@ -482,7 +482,7 @@ function App() {
                   <motion.a
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    href="/src/resume.pdf"
+                    href="/resume.pdf"
                     download
                     className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium"
                   >
