@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-app.get('/', (req, res) => {
+app.get('https://pratiksindhiya.vercel.app/', (req, res) => {
     res.send("Welcome to the server");
 });
 
