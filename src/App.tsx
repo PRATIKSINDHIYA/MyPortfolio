@@ -48,7 +48,7 @@ function App() {
     };
   
     try {
-      const response = await fetch('/submit', {
+      const response = await fetch('https://pratiksindhiya.vercel.app/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
