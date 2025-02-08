@@ -467,12 +467,12 @@ function App() {
                     <div>
                       <h4 className="text-white">B.Tech in Computer Science</h4>
                       <p className="text-gray-400">Indian Institute of Information Technology Vadodara, Gujarat</p>
-                      <p className="text-gray-400">2020 - Present | CPI: 6.5</p>
+                      <p className="text-gray-400">2020 - Present</p>
                     </div>
                     <div>
                       <h4 className="text-white">Senior Secondary Education</h4>
                       <p className="text-gray-400">Shri Bajpai Convent Higher Secondary School</p>
-                      <p className="text-gray-400">(2021)</p>
+                      <p className="text-gray-400">2021</p>
                     </div>
                   </div>
                 </div>
