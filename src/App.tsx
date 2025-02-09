@@ -265,90 +265,109 @@ function App() {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section className="py-20" id="projects">
-        <div className="container mx-auto px-6">
+ {/* Projects Section */}
+<section className="py-20" id="projects">
+  <div className="container mx-auto px-6">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+    >
+      <div className="flex items-center gap-4 mb-12">
+        <Briefcase className="text-blue-400" size={32} />
+        <h2 className="text-4xl font-bold">Projects</h2>
+      </div>
+      <div className="grid md:grid-cols-3 gap-8">
+        {[  
+          {
+            "title": "Pixabay Image Search",
+            "description": "A responsive image search application using the Pixabay API with advanced filtering and infinite scroll",
+            "image": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2055",
+            "githubLink": "https://github.com/PRATIKSINDHIYA/PixabaySearcher",
+            "liveLink": "https://pixabayimgsearch.vercel.app/"
+          },
+          {
+            "title": "Gemini-Ai Clone",
+            "description": "A clone of Gemini-Ai featuring AI-powered capabilities",
+            "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/final_keyword_header.width-1200.format-webp.webp",
+            "githubLink": "https://github.com/PRATIKSINDHIYA/Gemini-Ai_Clone",
+            "liveLink": "https://gemini-ai-clone-steel.vercel.app/"
+          },
+          {
+            "title": "Firebase Student Portal",
+            "description": "A student portal built using Firebase with authentication and real-time database features",
+            "image": "https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=2084",
+            "githubLink": "https://github.com/PRATIKSINDHIYA/FirebaseStudentPortal",
+            "liveLink": "https://firebase-studentportal.vercel.app/"
+          },
+          {
+            "title": "ListenUp Web Player",
+            "description": "A web-based music player that allows users to stream and play music",
+            "image": "https://images.unsplash.com/photo-1487180144351-b8472da7d491?q=80&w=2084",
+            "githubLink": "https://github.com/PRATIKSINDHIYA/ListenUpWebPlayer",
+            "liveLink": "https://listenup.freewebhostmost.com/"
+          },
+          {
+            "title": "Weather Forecasting",
+            "description": "A weather forecasting application that provides real-time weather updates and future predictions",
+            "image": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=2084",
+            "githubLink": "https://github.com/PRATIKSINDHIYA/WeatherForecastingUsingReactjs",
+            "liveLink": "https://weatherforecasting-one.vercel.app/"
+          },
+          {
+            "title": "Railway Management System",
+            "description": "Full-stack railway booking and management system with real-time tracking",
+            "image": "https://images.unsplash.com/photo-1474487548417-781cb71495f3?q=80&w=2084",
+            "githubLink": "https://github.com/PRATIKSINDHIYA/RailwayManagementSystem",
+            "liveLink": ""  // No live link added for this one
+          }
+        ]
+        .map((project, index) => (
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            className="group relative overflow-hidden rounded-xl"
           >
-            <div className="flex items-center gap-4 mb-12">
-              <Briefcase className="text-blue-400" size={32} />
-              <h2 className="text-4xl font-bold">Projects</h2>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-  {
-    "title": "Pixabay Image Search",
-    "description": "A responsive image search application using the Pixabay API with advanced filtering and infinite scroll",
-    "image": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2055",
-    "link": "https://github.com/PRATIKSINDHIYA/PixabaySearcher"
-  },
-  {
-    "title": "Railway Management System",
-    "description": "Full-stack railway booking and management system with real-time tracking",
-    "image": "https://images.unsplash.com/photo-1474487548417-781cb71495f3?q=80&w=2084",
-    "link": "https://github.com/PRATIKSINDHIYA/RailwayManagementSystem"
-  },
-  {
-    "title": "Gemini-Ai Clone",
-    "description": "A clone of Gemini-Ai featuring AI-powered capabilities",
-    "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/final_keyword_header.width-1200.format-webp.webp",
-    "link": "https://github.com/PRATIKSINDHIYA/Gemini-Ai_Clone"
-  },
-  {
-    "title": "Firebase Student Portal",
-    "description": "A student portal built using Firebase with authentication and real-time database features",
-    "image": "https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=2084",
-    "link": "https://github.com/PRATIKSINDHIYA/FirebaseStudentPortal"
-  },
-  {
-    "title": "ListenUp Web Player",
-    "description": "A web-based music player that allows users to stream and play music",
-    "image": "https://images.unsplash.com/photo-1487180144351-b8472da7d491?q=80&w=2084",
-    "link": "https://github.com/PRATIKSINDHIYA/ListenUpWebPlayer"
-  },
-  {
-    "title": "Weather Forecasting",
-    "description": "A weather forecasting application that provides real-time weather updates and future predictions",
-    "image": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=2084",
-    "link": "https://github.com/PRATIKSINDHIYA/WeatherForecastingUsingReactjs"
-  }
-]
-.map((project, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  className="group relative overflow-hidden rounded-xl"
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/0 p-6 flex flex-col justify-end">
+              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+              <p className="text-gray-300 mb-4">{project.description}</p>
+              <div className="flex gap-4">
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-blue-400 hover:text-blue-300"
                 >
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/0 p-6 flex flex-col justify-end">
-                    <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                    <p className="text-gray-300 mb-4">{project.description}</p>
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-blue-400 hover:text-blue-300"
-                    >
-                      View Project <ExternalLink size={16} className="ml-1" />
-                    </a>
-                  </div>
-                </motion.div>
-              ))}
+                  View Code <ExternalLink size={16} className="ml-1" />
+                </a>
+                {project.liveLink && (
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-blue-400 hover:text-blue-300"
+                  >
+                    View Live <ExternalLink size={16} className="ml-1" />
+                  </a>
+                )}
+              </div>
             </div>
           </motion.div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </motion.div>
+  </div>
+</section>
+
 
       {/* Education Section */}
       <section className="py-20 bg-gray-800" id="education">
