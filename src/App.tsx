@@ -306,7 +306,7 @@ function App() {
             "description": "A web-based music player that allows users to stream and play music",
             "image": "https://images.unsplash.com/photo-1487180144351-b8472da7d491?q=80&w=2084",
             "githubLink": "https://github.com/PRATIKSINDHIYA/ListenUpWebPlayer",
-            "liveLink": "https://listenup.freewebhostmost.com/"
+            "liveLink": "" // No live link added for this one
           },
           {
             "title": "Weather Forecasting",
